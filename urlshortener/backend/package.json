@@ -1,0 +1,20 @@
+{
+  "name": "backendurlshortener",
+  "version": "1.0.0",
+  "description": "It provides a short URL for a long URL.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nidesh Pandey",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.8.1",
+    "nodemon": "^2.0.20",
+    "shortid": "^2.2.16"
+  }
+}
