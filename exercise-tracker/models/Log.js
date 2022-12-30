@@ -8,6 +8,9 @@ const LogSchema = new mongoose.Schema({
   count: {
     type: Number,
   },
+  _id: {
+    type: String,
+  },
   log: {
     type: [
       {

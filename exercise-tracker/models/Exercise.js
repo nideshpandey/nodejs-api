@@ -13,6 +13,9 @@ const ExerciseSchema = new mongoose.Schema({
   date: {
     type: String,
   },
+  _id: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("Exercise", ExerciseSchema);
