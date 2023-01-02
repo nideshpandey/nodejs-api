@@ -20,10 +20,14 @@ const getLog = async (req, res) => {
       let dates = selectedLog.log.filter((item) => {
         console.log(typeof new Date(item.date), new Date(from), new Date(to));
         return (
-          new Date(item.date) >= new Date(from) &&
-          new Date(item.date) <= new Date(to)
+          new Date(item.date).setHours(0, 0, 0, 0) >=
+            new Date(from).setHours(0, 0, 0, 0) &&
+          new Date(item.date).setHours(0, 0, 0, 0) <=
+            new Date(to).setHours(0, 0, 0, 0)
         );
       });
+
+      const sortedDates = dates.sort((a, b) => b.date - a.date);
 
       //console.log("Here are dates");
 
@@ -32,7 +36,7 @@ const getLog = async (req, res) => {
         username: username,
         count: selectedLog.count,
         _id: id,
-        log: dates.slice(0, Number(limit)),
+        log: sortedDates.slice(0, Number(limit)),
       };
 
       console.log(resObj);
